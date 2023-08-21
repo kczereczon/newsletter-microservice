@@ -2,6 +2,7 @@
 
 namespace App\Common\CQRS;
 
-interface Command
+interface CommandHandler
 {
+
 }

@@ -6,13 +6,3 @@ interface Query
 {
 
 }
-
-interface QueryBus
-{
-    public function handle(Query $query);
-}
-
-interface QueryHandler
-{
-
-}

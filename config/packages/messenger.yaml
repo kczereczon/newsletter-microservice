@@ -17,7 +17,7 @@ framework:
             # 'App\Message\YourMessage': async
 #            'App\Command\SendWelcomeEmail': async
 #            'App\Command\SendEmail': async
-            'App\Command\SignIntoNewsletterCommand': sync
+            'App\Cqrs\Command\SignIntoNewsletterCommand': sync
 #            'App\Query\ListSentEmails': sync
 #            'App\Query\ListNewsletterSignups': sync
 

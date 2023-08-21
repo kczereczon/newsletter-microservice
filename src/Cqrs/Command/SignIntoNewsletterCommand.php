@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Command;
+namespace App\Cqrs\Command;
 
 use App\Common\CQRS\Command;
 

@@ -7,6 +7,7 @@ parameters:
 
 services:
     _instanceof:
+
         App\Common\CQRS\CommandHandler:
             tags:
                 - { name: messenger.message_handler, bus: command.bus }

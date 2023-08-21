@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\EmailAddress;
+use App\Entity\Localization;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -19,6 +20,15 @@ class EmailAddressRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, EmailAddress::class);
+    }
+
+    public function save(EmailAddress $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
     }
 
 //    /**
@@ -55,4 +65,5 @@ class EmailAddressRepository extends ServiceEntityRepository
             ->getArrayResult()
         ;
     }
+
 }

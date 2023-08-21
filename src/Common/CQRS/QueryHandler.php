@@ -2,6 +2,6 @@
 
 namespace App\Common\CQRS;
 
-interface Command
+interface QueryHandler
 {
 }
