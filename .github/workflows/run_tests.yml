@@ -46,7 +46,7 @@ jobs:
           MESSENGER_TRANSPORT_DSN: 'redis://${{ env.REDIS_HOST}}:${{ env.REDIS_PORT}}/messages'
           DATABASE_URL: "postgresql://app:!ChangeMe!@${{ env.POSTGRES_HOST }}:${{ env.POSTGRES_PORT }}/app?serverVersion=15&charset=utf8"
       - name: Run tests
-        run: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
+        run: ./vendor/bin/phpunit --coverage-clover clover.xml
         env:
           XDEBUG_MODE: coverage
           MESSENGER_TRANSPORT_DSN: 'redis://${{ env.REDIS_HOST}}:${{ env.REDIS_PORT}}/messages'
