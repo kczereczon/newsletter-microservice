@@ -9,11 +9,17 @@ on:
 env:
   POSTGRES_HOST: 127.0.0.1
   POSTGRES_PORT: 5432
+  REDIS_HOST: 127.0.0.1
+  REDIS_PORT: 6379
 
 jobs:
   test:
     runs-on: ubuntu-latest
     services:
+      redis:
+        image: redis:6.2-alpine
+        ports:
+          - 6379:6379
       postgres:
         image: postgres:15-alpine
         env:
@@ -37,11 +43,13 @@ jobs:
       - name: Run migrations
         run: php bin/console doctrine:migrations:migrate --env=test --no-interaction
         env:
+          MESSENGER_TRANSPORT_DSN: 'redis://${{ env.REDIS_HOST}}:${{ env.REDIS_PORT}}/messages'
           DATABASE_URL: "postgresql://app:!ChangeMe!@${{ env.POSTGRES_HOST }}:${{ env.POSTGRES_PORT }}/app?serverVersion=15&charset=utf8"
       - name: Run tests
         run: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
         env:
           XDEBUG_MODE: coverage
+          MESSENGER_TRANSPORT_DSN: 'redis://${{ env.REDIS_HOST}}:${{ env.REDIS_PORT}}/messages'
           DATABASE_URL: "postgresql://app:!ChangeMe!@${{ env.POSTGRES_HOST }}:${{ env.POSTGRES_PORT }}/app?serverVersion=15&charset=utf8"
       - name: Generate test coverage badge
         uses: timkrase/phpunit-coverage-badge@v1.2.0
