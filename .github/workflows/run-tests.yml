@@ -1,0 +1,44 @@
+name: Run tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: app_test
+          POSTGRES_PASSWORD: '!ChangeMe!'
+          POSTGRES_USER: app
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          node-version: '16'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: xdebug, pdo_pgsql, pdo
+          tools: composer
+      - name: Install dependencies
+        run: composer install --dev
+      - name: Check env
+        run: cat .env.test
+      - name: Run migrations
+        depends-on: postgres
+        run: php bin/console doctrine:migrations:migrate --env=test --no-interaction
+        env:
+          DATABASE_URL: "postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=15&charset=utf8"
+      - name: Run tests
+        depends-on: postgres
+        run: ./vendor/bin/phpunit
+        env:
+          DATABASE_URL: "postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=15&charset=utf8"
