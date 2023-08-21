@@ -4,7 +4,7 @@ RUN apt-get update -y && apt-get install -y libmcrypt-dev libpq-dev git zip unzi
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN curl -sS https://get.symfony.com/cli/installer | bash -s - --install-dir=/usr/local/bin
-RUN docker-php-ext-install pdo pdo_pgsql opcache
+RUN docker-php-ext-install pdo pdo_pgsql opcache zip
 RUN pecl install redis && docker-php-ext-enable redis
 
 WORKDIR /app
