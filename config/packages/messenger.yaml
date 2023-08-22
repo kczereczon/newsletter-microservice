@@ -17,14 +17,14 @@ framework:
             # 'App\Message\YourMessage': async
 #            'App\Command\SendWelcomeEmail': async
 #            'App\Command\SendEmail': async
-            'App\Newsletter\Command\SignIntoNewsletterCommand': async
+            'App\Newsletter\Command\SignIntoNewsletterCommand': sync
 #            'App\Query\ListSentEmails': sync
 #            'App\Que      ry\ListNewsletterSignups': sync
 
-# when@test:
-#    framework:
-#        messenger:
-#            transports:
-#                # replace with your transport name here (e.g., my_transport: 'in-memory://')
-#                # For more Messenger testing tools, see https://github.com/zenstruck/messenger-test
-#                async: 'in-memory://'
+when@test:
+  framework:
+      messenger:
+          transports:
+              # replace with your transport name here (e.g., my_transport: 'in-memory://')
+              # For more Messenger testing tools, see https://github.com/zenstruck/messenger-test
+              async: 'in-memory://'
