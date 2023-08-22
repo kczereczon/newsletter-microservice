@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692644052">
-  <project timestamp="1692644052">
+<coverage generated="1692644286">
+  <project timestamp="1692644286">
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Command/NewsletterSignCommand.php">
       <class name="App\Command\NewsletterSignCommand" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
