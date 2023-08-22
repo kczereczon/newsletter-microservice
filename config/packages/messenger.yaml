@@ -11,7 +11,6 @@ framework:
         transports:
              async: '%env(MESSENGER_TRANSPORT_DSN)%'
              sync: 'sync://'
-             external_messages: '%env(MESSENGER_TRANSPORT_DSN)%'
 
         routing:
             # Route your messages to the transports

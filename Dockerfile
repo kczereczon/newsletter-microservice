@@ -15,4 +15,4 @@ RUN symfony check:requirements
 RUN symfony server:prod
 
 EXPOSE 8000
-CMD symfony server:start
+CMD ./startup.sh
