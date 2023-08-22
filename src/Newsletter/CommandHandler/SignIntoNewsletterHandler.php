@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Cqrs\CommandHandler;
+namespace App\Newsletter\CommandHandler;
 
 use App\Common\CQRS\CommandHandler;
-use App\Cqrs\Command\SignIntoNewsletterCommand;
-use App\Factory\EmailAddressFactory;
-use App\Repository\EmailAddressRepository;
+use App\Newsletter\Command\SignIntoNewsletterCommand;
+use App\Newsletter\Factory\EmailAddressFactory;
+use App\Newsletter\Repository\EmailAddressRepository;
 
 class SignIntoNewsletterHandler implements CommandHandler
 {

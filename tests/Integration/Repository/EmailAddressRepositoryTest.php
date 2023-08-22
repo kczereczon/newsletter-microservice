@@ -3,10 +3,8 @@
 namespace App\Tests\Integration\Repository;
 
 use App\Entity\EmailAddress;
-use App\Repository\EmailAddressRepository;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Newsletter\Repository\EmailAddressRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\HttpKernel\KernelInterface;
 
 class EmailAddressRepositoryTest extends KernelTestCase
 {

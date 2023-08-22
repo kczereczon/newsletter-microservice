@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Newsletter\Repository;
 
 use App\Entity\EmailAddress;
-use App\Entity\Localization;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

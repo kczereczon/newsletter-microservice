@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\EmailAddressRepository;
+use App\Newsletter\Repository\EmailAddressRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EmailAddressRepository::class)]

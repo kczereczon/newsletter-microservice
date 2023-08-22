@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Cqrs\Command;
+namespace App\Newsletter\Command;
 
 use App\Common\CQRS\Command;
 

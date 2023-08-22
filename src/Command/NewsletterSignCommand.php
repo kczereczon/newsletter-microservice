@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Common\CQRS\CommandBus;
-use App\Cqrs\Command\SignIntoNewsletterCommand;
+use App\Newsletter\Command\SignIntoNewsletterCommand;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
