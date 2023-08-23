@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Newsletter\Repository\EmailAddressRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EmailAddressRepository::class)]
@@ -21,6 +23,14 @@ class EmailAddress
 
     #[ORM\Column]
     private ?bool $disabled = null;
+
+    #[ORM\OneToMany(mappedBy: 'emailAddress', targetEntity: Email::class)]
+    private Collection $emails;
+
+    public function __construct()
+    {
+        $this->emails = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +69,36 @@ class EmailAddress
     public function setDisabled(bool $disabled): static
     {
         $this->disabled = $disabled;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Email>
+     */
+    public function getEmails(): Collection
+    {
+        return $this->emails;
+    }
+
+    public function addEmail(Email $email): static
+    {
+        if (!$this->emails->contains($email)) {
+            $this->emails->add($email);
+            $email->setEmailAddress($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEmail(Email $email): static
+    {
+        if ($this->emails->removeElement($email)) {
+            // set the owning side to null (unless already changed)
+            if ($email->getEmailAddress() === $this) {
+                $email->setEmailAddress(null);
+            }
+        }
 
         return $this;
     }
