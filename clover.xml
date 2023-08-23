@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692731098">
-  <project timestamp="1692731098">
+<coverage generated="1692770378">
+  <project timestamp="1692770378">
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Command/NewsletterSignCommand.php">
       <class name="App\Command\NewsletterSignCommand" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
@@ -60,28 +60,117 @@
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Common/CQRS/QueryHandler.php">
       <metrics loc="7" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
+    <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Email/Command/SendWelcomeEmail.php">
+      <class name="App\Email\Command\SendWelcomeEmail" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="11" type="stmt" count="1"/>
+      <line num="13" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <metrics loc="17" ncloc="17" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Entity/Email.php">
+      <class name="App\Entity\Email" namespace="global">
+        <metrics complexity="9" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="22" coveredelements="0"/>
+      </class>
+      <line num="29" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="34" type="method" name="getTitle" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="39" type="method" name="setTitle" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="46" type="method" name="getBody" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="51" type="method" name="setBody" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="55" type="stmt" count="0"/>
+      <line num="58" type="method" name="getEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <line num="63" type="method" name="setEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="65" type="stmt" count="0"/>
+      <line num="67" type="stmt" count="0"/>
+      <line num="70" type="method" name="getEmailTemplate" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="75" type="method" name="setEmailTemplate" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="77" type="stmt" count="0"/>
+      <line num="79" type="stmt" count="0"/>
+      <metrics loc="82" ncloc="82" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="22" coveredelements="0"/>
+    </file>
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Entity/EmailAddress.php">
       <class name="App\Entity\EmailAddress" namespace="global">
-        <metrics complexity="7" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="8" elements="17" coveredelements="13"/>
+        <metrics complexity="14" methods="11" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="9" elements="31" coveredelements="15"/>
       </class>
-      <line num="25" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="30" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="32" type="stmt" count="2"/>
-      <line num="35" type="method" name="setEmail" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="37" type="stmt" count="3"/>
-      <line num="39" type="stmt" count="3"/>
-      <line num="42" type="method" name="getFirstName" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="44" type="stmt" count="2"/>
-      <line num="47" type="method" name="setFirstName" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="30" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="32" type="stmt" count="3"/>
+      <line num="35" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="40" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="42" type="stmt" count="2"/>
+      <line num="45" type="method" name="setEmail" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="47" type="stmt" count="3"/>
       <line num="49" type="stmt" count="3"/>
-      <line num="51" type="stmt" count="3"/>
-      <line num="54" type="method" name="isDisabled" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="56" type="stmt" count="0"/>
-      <line num="59" type="method" name="setDisabled" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="52" type="method" name="getFirstName" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="54" type="stmt" count="2"/>
+      <line num="57" type="method" name="setFirstName" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="59" type="stmt" count="3"/>
       <line num="61" type="stmt" count="3"/>
-      <line num="63" type="stmt" count="3"/>
-      <metrics loc="66" ncloc="66" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="8" elements="17" coveredelements="13"/>
+      <line num="64" type="method" name="isDisabled" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="66" type="stmt" count="0"/>
+      <line num="69" type="method" name="setDisabled" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="71" type="stmt" count="3"/>
+      <line num="73" type="stmt" count="3"/>
+      <line num="79" type="method" name="getEmails" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="84" type="method" name="addEmail" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="86" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="91" type="stmt" count="0"/>
+      <line num="94" type="method" name="removeEmail" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="96" type="stmt" count="0"/>
+      <line num="98" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="103" type="stmt" count="0"/>
+      <metrics loc="106" ncloc="102" classes="1" methods="11" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="9" elements="31" coveredelements="15"/>
+    </file>
+    <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Entity/EmailTemplate.php">
+      <class name="App\Entity\EmailTemplate" namespace="global">
+        <metrics complexity="14" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="31" coveredelements="0"/>
+      </class>
+      <line num="31" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="36" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="41" type="method" name="getTitle" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="46" type="method" name="setTitle" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="53" type="method" name="getBody" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="55" type="stmt" count="0"/>
+      <line num="58" type="method" name="setBody" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="65" type="method" name="getName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="67" type="stmt" count="0"/>
+      <line num="70" type="method" name="setName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="74" type="stmt" count="0"/>
+      <line num="80" type="method" name="getEmails" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="85" type="method" name="addEmail" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="95" type="method" name="removeEmail" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="97" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="100" type="stmt" count="0"/>
+      <line num="104" type="stmt" count="0"/>
+      <metrics loc="107" ncloc="103" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="31" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Kernel.php">
       <class name="App\Kernel" namespace="global">
@@ -91,19 +180,19 @@
     </file>
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Newsletter/Command/SignIntoNewsletterCommand.php">
       <class name="App\Newsletter\Command\SignIntoNewsletterCommand" namespace="global">
-        <metrics complexity="4" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="10" coveredelements="8"/>
+        <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
       </class>
-      <line num="18" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="20" type="stmt" count="3"/>
-      <line num="21" type="stmt" count="3"/>
-      <line num="22" type="stmt" count="3"/>
-      <line num="28" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="36" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="38" type="stmt" count="3"/>
-      <line num="44" type="method" name="getFirstName" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="46" type="stmt" count="2"/>
-      <metrics loc="49" ncloc="35" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="10" coveredelements="8"/>
+      <line num="18" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="20" type="stmt" count="4"/>
+      <line num="21" type="stmt" count="4"/>
+      <line num="22" type="stmt" count="4"/>
+      <line num="28" type="method" name="getId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="36" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="38" type="stmt" count="4"/>
+      <line num="44" type="method" name="getFirstName" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="46" type="stmt" count="3"/>
+      <metrics loc="49" ncloc="35" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
     </file>
     <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Newsletter/CommandHandler/SignIntoNewsletterHandler.php">
       <class name="App\Newsletter\CommandHandler\SignIntoNewsletterHandler" namespace="global">
@@ -151,6 +240,22 @@
       <line num="65" type="stmt" count="1"/>
       <metrics loc="69" ncloc="38" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
     </file>
-    <metrics files="15" loc="391" ncloc="345" classes="8" methods="24" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="51" elements="78" coveredelements="72"/>
+    <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Repository/EmailRepository.php">
+      <class name="App\Repository\EmailRepository" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <metrics loc="49" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+    </file>
+    <file name="/home/runner/work/newsletter-microservice/newsletter-microservice/src/Repository/EmailTemplateRepository.php">
+      <class name="App\Repository\EmailTemplateRepository" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <metrics loc="49" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+    </file>
+    <metrics files="20" loc="735" ncloc="619" classes="13" methods="52" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="55" elements="153" coveredelements="80"/>
   </project>
 </coverage>
