@@ -14,7 +14,7 @@ class SignIntoNewsletterHandlerTest extends KernelTestCase
     protected function tearDown(): void
     {
         $kernel = self::bootKernel();
-        self::getContainer()->get('doctrine')->getConnection()->executeQuery('TRUNCATE TABLE email_address');
+        self::getContainer()->get('doctrine')->getConnection()->executeQuery('TRUNCATE TABLE email_address CASCADE');
     }
 
     public function testHandlerThrowExceptionWhenEmailAlreadySigned(): void
