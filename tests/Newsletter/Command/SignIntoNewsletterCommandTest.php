@@ -2,7 +2,7 @@
 
 namespace App\Tests\Newsletter\Command;
 
-use App\Newsletter\Command\SignIntoNewsletterCommand;
+use App\Newsletter\Application\SignIntoNewsletterCommand;
 use PHPUnit\Framework\TestCase;
 
 class SignIntoNewsletterCommandTest extends TestCase

@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Newsletter\CommandHandler;
+namespace App\Newsletter\Application;
 
-use App\Newsletter\Command\SignIntoNewsletterCommand;
-use App\Newsletter\Factory\EmailAddressFactory;
-use App\Newsletter\Repository\EmailAddressRepository;
+use App\Newsletter\Infrastructure\DoctrineEmailAddressRepository;
+use App\Newsletter\Infrastructure\EmailAddressFactory;
 use App\Shared\Application\CommandHandler;
 
 class SignIntoNewsletterHandler implements CommandHandler
 {
     private EmailAddressFactory $emailAddressFactory;
-    private EmailAddressRepository $emailAddressRepository;
+    private DoctrineEmailAddressRepository $emailAddressRepository;
 
     public function __construct(
         EmailAddressFactory $emailAddressFactory,
-        EmailAddressRepository $emailAddressRepository
+        DoctrineEmailAddressRepository $emailAddressRepository
     ) {
         $this->emailAddressFactory = $emailAddressFactory;
         $this->emailAddressRepository = $emailAddressRepository;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Email\Command;
+namespace App\Email\Application;
 
 use App\Shared\Application\Command;
 
-class SendWelcomeEmail implements Command
+class SendWelcomeEmailCommand implements Command
 {
     public function __construct(private readonly string $email)
     {

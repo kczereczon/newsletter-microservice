@@ -2,15 +2,15 @@
 
 namespace App\Tests\MotherObject;
 
-use App\Entity\EmailAddress;
+use App\Newsletter\Infrastructure\DoctrineEmailAddressEntity;
 
 class EmailAddressMother
 {
-    public static function anyActive(): EmailAddress
+    public static function anyActive(): DoctrineEmailAddressEntity
     {
         $faker = \Faker\Factory::create();
 
-        $emailAddress = new EmailAddress();
+        $emailAddress = new DoctrineEmailAddressEntity();
         $emailAddress->setEmail($faker->email());
         $emailAddress->setFirstName($faker->firstName());
         $emailAddress->setDisabled(false);
@@ -18,11 +18,11 @@ class EmailAddressMother
         return $emailAddress;
     }
 
-    public static function anyDisabled(): EmailAddress
+    public static function anyDisabled(): DoctrineEmailAddressEntity
     {
         $faker = \Faker\Factory::create();
 
-        $emailAddress = new EmailAddress();
+        $emailAddress = new DoctrineEmailAddressEntity();
         $emailAddress->setEmail($faker->email());
         $emailAddress->setFirstName($faker->firstName());
         $emailAddress->setDisabled(true);

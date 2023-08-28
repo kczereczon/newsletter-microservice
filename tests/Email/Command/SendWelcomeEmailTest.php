@@ -8,12 +8,12 @@ class SendWelcomeEmailTest extends TestCase
 {
     public function testClassExists(): void
     {
-        $this->assertTrue(class_exists('App\Email\Command\SendWelcomeEmail'));
+        $this->assertTrue(class_exists('App\Email\Application\SendWelcomeEmailCommand'));
     }
 
     public function testConstructor(): void
     {
-        $command = new \App\Email\Command\SendWelcomeEmail('email');
+        $command = new \App\Email\Application\SendWelcomeEmailCommand('email');
         $this->assertEquals('email', $command->getEmail());
     }
 

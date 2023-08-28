@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Entity;
+namespace App\Newsletter\Infrastructure;
 
-use App\Newsletter\Repository\EmailAddressRepository;
+use App\Email\Infrastructure\DoctrineEmailEntity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: EmailAddressRepository::class)]
-class EmailAddress
+#[ORM\Table(name: 'email_address')]
+#[ORM\Entity(repositoryClass: DoctrineEmailAddressRepository::class)]
+class DoctrineEmailAddressEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -24,7 +25,7 @@ class EmailAddress
     #[ORM\Column]
     private ?bool $disabled = null;
 
-    #[ORM\OneToMany(mappedBy: 'emailAddress', targetEntity: Email::class)]
+    #[ORM\OneToMany(mappedBy: 'emailAddress', targetEntity: DoctrineEmailEntity::class)]
     private Collection $emails;
 
     public function __construct()
@@ -74,14 +75,14 @@ class EmailAddress
     }
 
     /**
-     * @return Collection<int, Email>
+     * @return Collection<int, DoctrineEmailEntity>
      */
     public function getEmails(): Collection
     {
         return $this->emails;
     }
 
-    public function addEmail(Email $email): static
+    public function addEmail(DoctrineEmailEntity $email): static
     {
         if (!$this->emails->contains($email)) {
             $this->emails->add($email);
@@ -91,7 +92,7 @@ class EmailAddress
         return $this;
     }
 
-    public function removeEmail(Email $email): static
+    public function removeEmail(DoctrineEmailEntity $email): static
     {
         if ($this->emails->removeElement($email)) {
             // set the owning side to null (unless already changed)

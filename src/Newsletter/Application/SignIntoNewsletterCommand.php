@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Newsletter\Command;
+namespace App\Newsletter\Application;
 
 use App\Shared\Application\Command;
 

@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Entity;
+namespace App\Email\Infrastructure;
 
+use App\Newsletter\Infrastructure\DoctrineEmailAddressEntity;
 use App\Repository\EmailRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Table(name: 'email')]
 #[ORM\Entity(repositoryClass: EmailRepository::class)]
-class Email
+class DoctrineEmailEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,10 +23,10 @@ class Email
     private ?string $body = null;
 
     #[ORM\ManyToOne(inversedBy: 'emails')]
-    private ?EmailAddress $emailAddress = null;
+    private ?DoctrineEmailAddressEntity $emailAddress = null;
 
     #[ORM\ManyToOne(inversedBy: 'emails')]
-    private ?EmailTemplate $emailTemplate = null;
+    private ?DoctrineEmailTemplateEntity $emailTemplate = null;
 
     public function getId(): ?int
     {
@@ -55,24 +57,24 @@ class Email
         return $this;
     }
 
-    public function getEmailAddress(): ?EmailAddress
+    public function getEmailAddress(): ?DoctrineEmailAddressEntity
     {
         return $this->emailAddress;
     }
 
-    public function setEmailAddress(?EmailAddress $emailAddress): static
+    public function setEmailAddress(?DoctrineEmailAddressEntity $emailAddress): static
     {
         $this->emailAddress = $emailAddress;
 
         return $this;
     }
 
-    public function getEmailTemplate(): ?EmailTemplate
+    public function getEmailTemplate(): ?DoctrineEmailTemplateEntity
     {
         return $this->emailTemplate;
     }
 
-    public function setEmailTemplate(?EmailTemplate $emailTemplate): static
+    public function setEmailTemplate(?DoctrineEmailTemplateEntity $emailTemplate): static
     {
         $this->emailTemplate = $emailTemplate;
 

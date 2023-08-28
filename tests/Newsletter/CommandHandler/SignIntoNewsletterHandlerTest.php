@@ -2,9 +2,9 @@
 
 namespace App\Tests\Newsletter\CommandHandler;
 
-use App\Entity\EmailAddress;
-use App\Newsletter\Command\SignIntoNewsletterCommand;
-use App\Newsletter\CommandHandler\SignIntoNewsletterHandler;
+use App\Newsletter\Application\SignIntoNewsletterCommand;
+use App\Newsletter\Application\SignIntoNewsletterHandler;
+use App\Newsletter\Infrastructure\DoctrineEmailAddressEntity;
 use App\Tests\MotherObject\EmailAddressMother;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -50,7 +50,7 @@ class SignIntoNewsletterHandlerTest extends KernelTestCase
         $handler = static::getContainer()->get(SignIntoNewsletterHandler::class);
         $handler($command);
 
-        $emailAddressRepository = static::getContainer()->get('doctrine')->getRepository(EmailAddress::class);
+        $emailAddressRepository = static::getContainer()->get('doctrine')->getRepository(DoctrineEmailAddressEntity::class);
         $emailAddressExists = $emailAddressRepository->findOneBy(['email' => $emailAddress->getEmail()]);
 
         $this->assertNotNull($emailAddressExists);

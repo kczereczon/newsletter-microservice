@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Email\Infrastructure;
 
 use App\Repository\EmailTemplateRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -8,8 +8,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Table(name: 'email_template')]
 #[ORM\Entity(repositoryClass: EmailTemplateRepository::class)]
-class EmailTemplate
+class DoctrineEmailTemplateEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -25,7 +26,7 @@ class EmailTemplate
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'emailTemplate', targetEntity: Email::class)]
+    #[ORM\OneToMany(mappedBy: 'emailTemplate', targetEntity: DoctrineEmailEntity::class)]
     private Collection $emails;
 
     public function __construct()
@@ -75,14 +76,14 @@ class EmailTemplate
     }
 
     /**
-     * @return Collection<int, Email>
+     * @return Collection<int, DoctrineEmailEntity>
      */
     public function getEmails(): Collection
     {
         return $this->emails;
     }
 
-    public function addEmail(Email $email): static
+    public function addEmail(DoctrineEmailEntity $email): static
     {
         if (!$this->emails->contains($email)) {
             $this->emails->add($email);
@@ -92,7 +93,7 @@ class EmailTemplate
         return $this;
     }
 
-    public function removeEmail(Email $email): static
+    public function removeEmail(DoctrineEmailEntity $email): static
     {
         if ($this->emails->removeElement($email)) {
             // set the owning side to null (unless already changed)

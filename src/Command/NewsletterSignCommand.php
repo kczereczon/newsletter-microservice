@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use App\Newsletter\Command\SignIntoNewsletterCommand;
+use App\Newsletter\Application\SignIntoNewsletterCommand;
 use App\Shared\Infrastructure\CommandBus;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Attribute\AsCommand;
