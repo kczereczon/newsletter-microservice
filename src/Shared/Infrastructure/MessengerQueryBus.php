@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Common\CQRS;
+namespace App\Shared\Infrastructure;
 
+use App\Shared\Application\Query;
 use Symfony\Component\Messenger\HandleTrait;
 use Symfony\Component\Messenger\MessageBusInterface;
 

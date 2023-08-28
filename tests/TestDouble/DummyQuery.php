@@ -2,7 +2,7 @@
 
 namespace App\Tests\TestDouble;
 
-class DummyQuery implements \App\Common\CQRS\Query
+class DummyQuery implements \App\Shared\Application\Query
 {
     private array $payload;
 

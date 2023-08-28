@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Common\CQRS;
+namespace App\Shared\Infrastructure;
 
+use App\Shared\Application\Command;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 class MessengerCommandBus implements CommandBus

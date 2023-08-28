@@ -2,7 +2,7 @@
 
 namespace App\Tests\TestDouble;
 
-class DummyQueryHandler implements \App\Common\CQRS\QueryHandler
+class DummyQueryHandler implements \App\Shared\Application\QueryHandler
 {
 
     public function __invoke(DummyQuery $query): array

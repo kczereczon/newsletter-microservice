@@ -8,10 +8,10 @@ parameters:
 services:
     _instanceof:
 
-        App\Common\CQRS\CommandHandler:
+        App\Shared\Application\CommandHandler:
             tags:
                 - { name: messenger.message_handler, bus: command.bus }
-        App\Common\CQRS\QueryHandler:
+        App\Shared\Application\QueryHandler:
             tags:
                 - { name: messenger.message_handler, bus: query.bus }
 

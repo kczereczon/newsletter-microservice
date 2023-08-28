@@ -2,8 +2,8 @@
 
 namespace App\Tests\Common\CQRS;
 
-use App\Common\CQRS\MessengerQueryBus;
-use App\Common\CQRS\Query;
+use App\Shared\Application\Query;
+use App\Shared\Infrastructure\MessengerQueryBus;
 use App\Tests\TestDouble\DummyQuery;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\Envelope;

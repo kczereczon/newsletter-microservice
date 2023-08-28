@@ -2,7 +2,7 @@
 
 namespace App\Tests\TestDouble;
 
-class DummyCommand implements \App\Common\CQRS\Command
+class DummyCommand implements \App\Shared\Application\Command
 {
 
 }

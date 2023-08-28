@@ -2,10 +2,10 @@
 
 namespace App\Newsletter\CommandHandler;
 
-use App\Common\CQRS\CommandHandler;
 use App\Newsletter\Command\SignIntoNewsletterCommand;
 use App\Newsletter\Factory\EmailAddressFactory;
 use App\Newsletter\Repository\EmailAddressRepository;
+use App\Shared\Application\CommandHandler;
 
 class SignIntoNewsletterHandler implements CommandHandler
 {

@@ -2,7 +2,7 @@
 
 namespace App\Email\Command;
 
-use App\Common\CQRS\Command;
+use App\Shared\Application\Command;
 
 class SendWelcomeEmail implements Command
 {

@@ -2,7 +2,7 @@
 
 namespace App\Newsletter\Command;
 
-use App\Common\CQRS\Command;
+use App\Shared\Application\Command;
 
 class SignIntoNewsletterCommand implements Command
 {

@@ -2,14 +2,13 @@
 
 namespace App\Command;
 
-use App\Common\CQRS\CommandBus;
 use App\Newsletter\Command\SignIntoNewsletterCommand;
+use App\Shared\Infrastructure\CommandBus;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
