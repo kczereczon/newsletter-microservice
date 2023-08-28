@@ -1,5 +1,5 @@
 controllers:
     resource:
-        path: ../src/Newsletter/Infrastructure/Controller
-        namespace: App\Newsletter\Infrastructure\Controller
+        path: ../src/Newsletter/Infrastructure
+        namespace: App\Newsletter\Infrastructure
     type: attribute

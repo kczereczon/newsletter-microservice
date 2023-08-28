@@ -2,14 +2,13 @@
 
 namespace App\Email\Infrastructure;
 
-use App\Repository\EmailTemplateRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'email_template')]
-#[ORM\Entity(repositoryClass: EmailTemplateRepository::class)]
+#[ORM\Entity(repositoryClass: DoctrineEmailTemplateRepository::class)]
 class DoctrineEmailTemplateEntity
 {
     #[ORM\Id]

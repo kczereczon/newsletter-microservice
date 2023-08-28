@@ -1,28 +1,27 @@
 <?php
 
-namespace App\Repository;
+namespace App\Email\Infrastructure;
 
-use App\Email\Infrastructure\DoctrineEmailTemplateEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<DoctrineEmailTemplateEntity>
+ * @extends ServiceEntityRepository<DoctrineEmailEntity>
  *
- * @method DoctrineEmailTemplateEntity|null find($id, $lockMode = null, $lockVersion = null)
- * @method DoctrineEmailTemplateEntity|null findOneBy(array $criteria, array $orderBy = null)
- * @method DoctrineEmailTemplateEntity[]    findAll()
- * @method DoctrineEmailTemplateEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method DoctrineEmailEntity|null find($id, $lockMode = null, $lockVersion = null)
+ * @method DoctrineEmailEntity|null findOneBy(array $criteria, array $orderBy = null)
+ * @method DoctrineEmailEntity[]    findAll()
+ * @method DoctrineEmailEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EmailTemplateRepository extends ServiceEntityRepository
+class DoctrineEmailRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, DoctrineEmailTemplateEntity::class);
+        parent::__construct($registry, DoctrineEmailEntity::class);
     }
 
 //    /**
-//     * @return EmailTemplate[] Returns an array of EmailTemplate objects
+//     * @return Email[] Returns an array of Email objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -36,7 +35,7 @@ class EmailTemplateRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?EmailTemplate
+//    public function findOneBySomeField($value): ?Email
 //    {
 //        return $this->createQueryBuilder('e')
 //            ->andWhere('e.exampleField = :val')

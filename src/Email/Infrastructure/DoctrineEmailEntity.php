@@ -3,12 +3,11 @@
 namespace App\Email\Infrastructure;
 
 use App\Newsletter\Infrastructure\DoctrineEmailAddressEntity;
-use App\Repository\EmailRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'email')]
-#[ORM\Entity(repositoryClass: EmailRepository::class)]
+#[ORM\Entity(repositoryClass: DoctrineEmailRepository::class)]
 class DoctrineEmailEntity
 {
     #[ORM\Id]
