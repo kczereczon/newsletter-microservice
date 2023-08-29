@@ -6,12 +6,7 @@ use App\Shared\Application\Command;
 
 class SendWelcomeEmailCommand implements Command
 {
-    public function __construct(private readonly string $email)
+    public function __construct(public readonly string $email)
     {
-    }
-
-    public function getEmail(): string
-    {
-        return $this->email;
     }
 }
