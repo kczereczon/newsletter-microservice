@@ -2,6 +2,8 @@
 
 namespace App\Email\Domain;
 
+use App\Newsletter\Domain\EmailAddress;
+
 class Email
 {
     public function __construct(
@@ -17,7 +19,7 @@ class Email
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -33,23 +35,26 @@ class Email
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
     /**
      * @param string $title
+     * @return Email
      */
-    public function setTitle(string $title): void
+    public function setTitle(string $title): static
     {
         $this->title = $title;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function getBody(): string
+    public function getBody(): ?string
     {
         return $this->body;
     }
@@ -57,15 +62,17 @@ class Email
     /**
      * @param string $body
      */
-    public function setBody(string $body): void
+    public function setBody(string $body): static
     {
         $this->body = $body;
+
+        return $this;
     }
 
     /**
      * @return EmailAddress
      */
-    public function getEmailAddress(): EmailAddress
+    public function getEmailAddress(): ?EmailAddress
     {
         return $this->emailAddress;
     }
@@ -73,15 +80,17 @@ class Email
     /**
      * @param EmailAddress $emailAddress
      */
-    public function setEmailAddress(EmailAddress $emailAddress): void
+    public function setEmailAddress(?EmailAddress $emailAddress): static
     {
         $this->emailAddress = $emailAddress;
+
+        return $this;
     }
 
     /**
      * @return EmailTemplate
      */
-    public function getEmailTemplate(): EmailTemplate
+    public function getEmailTemplate(): ?EmailTemplate
     {
         return $this->emailTemplate;
     }
@@ -89,9 +98,11 @@ class Email
     /**
      * @param EmailTemplate $emailTemplate
      */
-    public function setEmailTemplate(EmailTemplate $emailTemplate): void
+    public function setEmailTemplate(?EmailTemplate $emailTemplate): static
     {
         $this->emailTemplate = $emailTemplate;
+
+        return $this;
     }
 
 

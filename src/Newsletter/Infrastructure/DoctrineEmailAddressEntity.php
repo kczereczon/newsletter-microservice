@@ -3,13 +3,14 @@
 namespace App\Newsletter\Infrastructure;
 
 use App\Email\Infrastructure\DoctrineEmailEntity;
+use App\Newsletter\Domain\EmailAddress;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'email_address')]
 #[ORM\Entity(repositoryClass: DoctrineEmailAddressRepository::class)]
-class DoctrineEmailAddressEntity
+class DoctrineEmailAddressEntity extends EmailAddress
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

@@ -2,6 +2,7 @@
 
 namespace App\Email\Infrastructure;
 
+use App\Email\Domain\EmailTemplate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -9,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'email_template')]
 #[ORM\Entity(repositoryClass: DoctrineEmailTemplateRepository::class)]
-class DoctrineEmailTemplateEntity
+class DoctrineEmailTemplateEntity extends EmailTemplate
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

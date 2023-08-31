@@ -2,13 +2,16 @@
 
 namespace App\Email\Infrastructure;
 
+use App\Email\Domain\Email;
+use App\Email\Domain\EmailTemplate;
+use App\Newsletter\Domain\EmailAddress;
 use App\Newsletter\Infrastructure\DoctrineEmailAddressEntity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table(name: 'email')]
 #[ORM\Entity(repositoryClass: DoctrineEmailRepository::class)]
-class DoctrineEmailEntity
+class DoctrineEmailEntity extends Email
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -56,12 +59,12 @@ class DoctrineEmailEntity
         return $this;
     }
 
-    public function getEmailAddress(): ?DoctrineEmailAddressEntity
+    public function getEmailAddress(): ?EmailAddress
     {
         return $this->emailAddress;
     }
 
-    public function setEmailAddress(?DoctrineEmailAddressEntity $emailAddress): static
+    public function setEmailAddress(?EmailAddress $emailAddress): static
     {
         $this->emailAddress = $emailAddress;
 
@@ -73,7 +76,7 @@ class DoctrineEmailEntity
         return $this->emailTemplate;
     }
 
-    public function setEmailTemplate(?DoctrineEmailTemplateEntity $emailTemplate): static
+    public function setEmailTemplate(?EmailTemplate $emailTemplate): static
     {
         $this->emailTemplate = $emailTemplate;
 
